@@ -16,14 +16,14 @@
             height: 100vh;
             background: url('bg.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #333;
+            color: #fff;
             overflow: hidden;
         }
         .container {
             text-align: center;
             width: 90%;
             max-width: 600px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(38, 70, 83, 0.8); /* Opacity 80% */
             padding: 20px;
             border-radius: 10px;
         }
@@ -52,16 +52,19 @@
             padding: 10px;
             margin: 10px auto;
             border: none;
-            background-color: #007bff;
+            background-color: #2A9D8F;
             color: white;
             border-radius: 5px;
             cursor: pointer;
-            width: auto;
-            max-width: 80%;
+            width: 80%; /* Menyesuaikan ukuran kotak opsi */
+            max-width: 300px;
             text-align: center;
-            opacity: 0;
-            transition: opacity 0.6s;
             font-weight: bold;
+            box-sizing: border-box;
+        }
+        .option-button p {
+            margin: 0;
+            line-height: 1.4;
         }
         .option-button.show {
             opacity: 1;
@@ -102,9 +105,15 @@
         <div id="page2" class="hidden">
             <p class="shade" id="message">sebenernya aku suka sama kamu hehe, aku ngga yakin bakal kamu terima tpi se engga nya aku uda nyoba haha</p>
             <div class="options">
-                <button class="option-button" id="option1">mau</button>
-                <button class="option-button" id="option2">hmm, aku pikir dulu</button>
-                <button class="option-button" id="option3">maaf, ngga dulu ya</button>
+                <button class="option-button" id="option1">
+                    <p>mau</p>
+                </button>
+                <button class="option-button" id="option2">
+                    <p>hmm, aku pikir dulu</p>
+                </button>
+                <button class="option-button" id="option3">
+                    <p>maaf, ngga dulu ya</p>
+                </button>
             </div>
         </div>
         <!-- Halaman 3 -->
