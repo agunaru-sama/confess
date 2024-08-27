@@ -108,13 +108,13 @@
         <div id="page2" class="hidden">
             <p class="shade" id="message">sebenernya aku suka sama kamu hehe, aku ngga yakin bakal kamu terima tpi se engga nya aku uda nyoba haha</p>
             <div class="options">
-                <button class="option-button" id="option1">
+                <button class="option-button" id="option1" data-choice="mau">
                     mau
                 </button>
-                <button class="option-button" id="option2">
+                <button class="option-button" id="option2" data-choice="hmm, aku pikir dulu">
                     hmm, aku pikir dulu
                 </button>
-                <button class="option-button" id="option3">
+                <button class="option-button" id="option3" data-choice="maaf, ngga dulu ya">
                     maaf, ngga dulu ya
                 </button>
             </div>
@@ -140,20 +140,23 @@
             }, 600);
         });
 
-        document.getElementById('option1').addEventListener('click', function() {
-            window.location.href = 'https://wa.me/6281999944230?text=mauu%2C%20aku%20juga%20suka%20kamuu'; // Mengarahkan ke nomor WhatsApp dengan draft teks
-        });
+        document.querySelectorAll('.option-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const choice = this.getAttribute('data-choice');
+                console.log('Opsi yang dipilih:', choice); // Menampilkan pilihan di konsol
 
-        document.getElementById('option2').addEventListener('click', function() {
-            document.getElementById('page2').classList.add('hidden');
-            document.getElementById('responseMessage').textContent = 'baikla, makasii waktunya yaa';
-            document.getElementById('page3').classList.remove('hidden');
-        });
-
-        document.getElementById('option3').addEventListener('click', function() {
-            document.getElementById('page2').classList.add('hidden');
-            document.getElementById('responseMessage').textContent = 'baiklah, maaf suda menyita waktumu';
-            document.getElementById('page3').classList.remove('hidden');
+                if (this.id === 'option1') {
+                    window.location.href = 'https://wa.me/6281999944230?text=mauu%2C%20aku%20juga%20suka%20kamuu'; // Mengarahkan ke nomor WhatsApp dengan draft teks
+                } else if (this.id === 'option2') {
+                    document.getElementById('page2').classList.add('hidden');
+                    document.getElementById('responseMessage').textContent = 'baikla, makasii waktunya yaa';
+                    document.getElementById('page3').classList.remove('hidden');
+                } else if (this.id === 'option3') {
+                    document.getElementById('page2').classList.add('hidden');
+                    document.getElementById('responseMessage').textContent = 'baiklah, maaf suda menyita waktumu';
+                    document.getElementById('page3').classList.remove('hidden');
+                }
+            });
         });
     </script>
 </body>
