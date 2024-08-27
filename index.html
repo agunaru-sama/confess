@@ -32,41 +32,42 @@
         }
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            width: 166px; /* Lebar tombol */
+            height: 60px; /* Tinggi tombol */
             margin: 10px;
             border: none;
-            background-color: #007bff;
+            background-color: #2A9D8F; /* Warna tombol */
             color: white;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 16px;
+            line-height: 60px; /* Vertikal alignment */
+            text-align: center;
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #1F7A6C;
         }
         .options {
             margin-top: 20px;
         }
         .option-button {
             display: block;
-            padding: 10px;
+            width: 166px; /* Lebar kotak opsi */
+            height: 60px; /* Tinggi kotak opsi */
             margin: 10px auto;
             border: none;
             background-color: #2A9D8F; /* Warna opsi */
             color: white;
             border-radius: 5px;
             cursor: pointer;
-            width: 80%; /* Menyesuaikan ukuran kotak opsi */
-            max-width: 300px;
             text-align: center;
             font-weight: bold;
+            line-height: 60px; /* Vertikal alignment */
+            font-size: 16px;
             box-sizing: border-box;
             opacity: 0;
             transition: opacity 0.6s;
-        }
-        .option-button p {
-            margin: 0;
-            line-height: 1.4;
         }
         .option-button.show {
             opacity: 1;
@@ -79,8 +80,8 @@
             opacity: 1;
         }
         .image-container img {
-            width: 100%;
-            max-width: 300px;
+            width: 80%; /* Mengatur lebar gambar di halaman 1 */
+            max-width: 250px; /* Lebar maksimum gambar */
             border: 0.3px solid #000;
             border-radius: 5px;
         }
@@ -108,13 +109,13 @@
             <p class="shade" id="message">sebenernya aku suka sama kamu hehe, aku ngga yakin bakal kamu terima tpi se engga nya aku uda nyoba haha</p>
             <div class="options">
                 <button class="option-button" id="option1">
-                    <p>mau</p>
+                    mau
                 </button>
                 <button class="option-button" id="option2">
-                    <p>hmm, aku pikir dulu</p>
+                    hmm, aku pikir dulu
                 </button>
                 <button class="option-button" id="option3">
-                    <p>maaf, ngga dulu ya</p>
+                    maaf, ngga dulu ya
                 </button>
             </div>
         </div>
